@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="375.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.view.memo.ViewMemoForm">
+   <children>
+      <Label alignment="CENTER" styleClass="titre-vue" text="Mémo" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+      <HBox alignment="CENTER" fillHeight="false" layoutY="60.0" prefHeight="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <GridPane alignment="CENTER" prefWidth="280.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="75.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Id :" />
+                  <Label fx:id="labId" prefHeight="17.0" prefWidth="45.0" text="Label" GridPane.columnIndex="1" />
+                  <Label text="Titre :" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfTitre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="59.0" layoutY="125.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+         <children>
+            <TabPane style="-fx-border-color: lightgray;">
+               <tabs>
+                  <Tab closable="false" text="Général">
+                     <content>
+                        <AnchorPane>
+                           <children>
+                              <TextArea fx:id="txaDescription" layoutX="20.0" layoutY="22.0" prefHeight="75.0" prefWidth="270.0" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="22.0" />
+                              <Label layoutX="14.0" layoutY="4.0" text="Description :" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="4.0" />
+                              <GridPane layoutY="80.0" prefHeight="60.0" prefWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="5.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="69.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="211.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Urgent :" />
+                                    <Label text="Catégorie :" GridPane.rowIndex="1" />
+                                    <CheckBox fx:id="ckbUrgent" mnemonicParsing="false" GridPane.columnIndex="1" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <ComboBox fx:id="cmbCategorie" prefWidth="150.0" />
+                                          <Button mnemonicParsing="false" onAction="#doCategorieSupprimer" text="Suppr." />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Détails">
+                     <content>
+                        <HBox alignment="CENTER" fillHeight="false">
+                           <children>
+                              <GridPane maxWidth="-Infinity" prefWidth="280.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="75.0" />
+                                    <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <children>
+                                    <TextField fx:id="txfEffectif" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txfBudget" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txfHeure" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <DatePicker fx:id="dtpEcheance" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <RadioButton mnemonicParsing="false" text="A faire">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="tggStatut" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="En cours" toggleGroup="$tggStatut" />
+                                          <RadioButton mnemonicParsing="false" text="Fini" toggleGroup="$tggStatut">
+                                             <padding>
+                                                <Insets left="10.0" right="5.0" />
+                                             </padding>
+                                          </RadioButton>
+                                       </children>
+                                    </HBox>
+                                    <Label text="Statut :" />
+                                    <Label text="Effectif :" GridPane.rowIndex="1" />
+                                    <Label text="Budget :" GridPane.rowIndex="2" />
+                                    <Label text="Echeance :" GridPane.rowIndex="3" />
+                                    <Label text="Heure :" GridPane.rowIndex="4" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Abonnés">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane prefHeight="144.0" prefWidth="169.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="107.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="69.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ListView fx:id="lsvAbonnes" />
+                                    <AnchorPane GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="13.0" text="Abonnés" AnchorPane.leftAnchor="10.0" />
+                                          <VBox alignment="CENTER_LEFT" layoutX="4.0" layoutY="24.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#doAbonneAjouter" prefWidth="51.0" text="Ajout" />
+                                                <Button mnemonicParsing="false" onAction="#doAbonneSupprimer" prefWidth="51.0" text="Suppr." />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab closable="false" text="Acteurs">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="225.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="55.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" layoutX="-19.0" layoutY="-56.0" spacing="5.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#doActeurAjouter" prefWidth="51.0" text="Ajout" />
+                                                <Button mnemonicParsing="false" onAction="#doActeurModifier" prefWidth="51.0" text="Modif." />
+                                                <Button mnemonicParsing="false" onAction="#doActeurSupprimer" prefWidth="51.0" text="Suppr." />
+                                             </children>
+                                          </VBox>
+                                          <Label layoutX="-14.0" text="Acteurs" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <TableView fx:id="tbvActeurs" prefHeight="200.0" prefWidth="200.0">
+                                       <columns>
+                                          <TableColumn fx:id="colPersonne" prefWidth="123.0" text="Acteur" />
+                                          <TableColumn fx:id="colFonction" prefWidth="91.0" text="Fonction" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab closable="false" text="Image">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="231.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <VBox alignment="CENTER" layoutX="195.0" layoutY="14.0" prefHeight="159.0" prefWidth="67.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Choisir" />
+                                    <Button mnemonicParsing="false" text="Ouvrir" />
+                                    <Button mnemonicParsing="false" text="Suppr." />
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TabPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="60.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="btnValider" defaultButton="true" mnemonicParsing="false" onAction="#doValider" prefHeight="25.0" prefWidth="60.0" text="Valider" />
+            <Button fx:id="buttonAnnuler" cancelButton="true" mnemonicParsing="false" onAction="#doAnnuler" text="Annuler" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
